@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect } from "react";
 import "./App.css";
 import { RobotsList } from "./components/robot/robots-list";
 import { Col, Container, Row } from "react-bootstrap";
@@ -15,7 +13,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://robot-cpe-2024.cleverapps.io/robots"
+        "https://robot-cpe.cleverapps.io/robots"
       );
       const data = await response.json();
       // même chose dispatch({ type: "LOAD_PARTS", payload: data });
@@ -23,19 +21,19 @@ function App() {
     }
     // Get data from an API.
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://robot-cpe-2024.cleverapps.io/parts"
+        "https://robot-cpe.cleverapps.io/parts"
       );
       const data = await response.json();
       dispatch(loadParts(data));
     }
     // Get data from an API.
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="app">

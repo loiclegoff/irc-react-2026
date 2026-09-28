@@ -19,7 +19,7 @@ The essential guide to getting started with React. This walkthrough tutorial wil
 
 ### Static HTML File
 
-Let's start by making a basic `index.html` file. We're going to load in three CDNs in the `head` - React, React DOM, and Babel. We're also going to make a `div` with an id called `root`, and finally we'll create a `script` tag where your custom code will live.
+Let's start by making a basic `index.html` file. React 19 is no longer published as a UMD bundle, so we declare React and React DOM in an **import map** and load Babel from a CDN. We're also going to make a `div` with an id called `root`, and finally we'll create a `script` tag where your custom code will live.
 
 ```html
 <!doctype html>
@@ -29,15 +29,20 @@ Let's start by making a basic `index.html` file. We're going to load in three CD
 
     <title>Hello React!</title>
 
-    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <!-- React 19 no longer ships a UMD build: we declare the imports -->
+    <script type="importmap">
+      { "imports": {
+          "react": "https://esm.sh/react@19.3.0",
+          "react-dom/client": "https://esm.sh/react-dom@19.3.0/client"
+      }}
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
 
   <body>
     <div id="root"></div>
 
-    <script type="text/babel">
+    <script type="text/babel" data-type="module">
       // React code will go here
     </script>
   </body>
@@ -83,13 +88,17 @@ const App = () => {
 };
 ```
 
-Finally, we're going to use the React DOM `render()` method to render the `App` class we created into the `root` div in our HTML.
+Finally, we're going to use `createRoot()` to render the `App` function we created into the `root` div in our HTML.
 
 index.html
 
 ```jsx
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+import { createRoot } from "react-dom/client";
+
+createRoot(document.getElementById("root")).render(<App />);
 ```
+
+> Note: here `import React from "react"` is still required, because Babel runs **in the browser** with the classic JSX transform. In the Vite project used from Step 0 onwards, you never write it.
 
 Here is the full code for our `index.html`.
 
@@ -103,20 +112,28 @@ index.html
 
     <title>Hello React!</title>
 
-    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <!-- React 19 no longer ships a UMD build: we declare the imports -->
+    <script type="importmap">
+      { "imports": {
+          "react": "https://esm.sh/react@19.3.0",
+          "react-dom/client": "https://esm.sh/react-dom@19.3.0/client"
+      }}
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
 
   <body>
     <div id="root"></div>
 
-    <script type="text/babel">
+    <script type="text/babel" data-type="module">
+      import React from "react";
+      import { createRoot } from "react-dom/client";
+
       const App = () => {
         return <h1>Hello world!</h1>;
       };
 
-      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+      createRoot(document.getElementById("root")).render(<App />);
     </script>
   </body>
 </html>
@@ -236,7 +253,7 @@ Others components : https://getbootstrap.com/docs/5.3/components/alerts/
 
 ## Fetch data
 
-A REST api is availaible at the following URL : https://robot-cpe-2024.cleverapps.io
+A REST api is availaible at the following URL : https://robot-cpe.cleverapps.io
 
 For this step you can use these endpoints:
 
