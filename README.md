@@ -226,7 +226,7 @@ Modify `index.js` and `App.js` to:
 
 ## Correction proposal
 
-- [branch](https://github.com/loiclegoff/irc-react-2024-correction/tree/step0-first_app)
+- [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step0-first_app)
 
 # Step 1 : use bootstrap components
 
@@ -246,8 +246,8 @@ Others components : https://getbootstrap.com/docs/5.3/components/alerts/
 
 ## Correction proposal
 
-- [branch](https://github.com/loiclegoff/irc-react-2024-correction/tree/step1-first_app_with_bootstrap_components)
-- [difference with previous step](https://github.com/loiclegoff/irc-react-2024-correction/compare/step0-first_app...step1-first_app_with_bootstrap_components?diff=split)
+- [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step1-first_app_with_bootstrap_components)
+- [difference with previous step](https://github.com/loiclegoff/irc-react-2026-correction/compare/step0-first_app...step1-first_app_with_bootstrap_components?diff=split)
 
 # Step 2 : 1 robot
 
@@ -283,8 +283,8 @@ To do :
 
 ## Correction proposal
 
-- [branch](https://github.com/loiclegoff/irc-react-2024-correction/tree/step2-1_robot_img_video)
-- [difference with the previous step](https://github.com/loiclegoff/irc-react-2024-correction/compare/step1-first_app_with_bootstrap_components...step2-1_robot_img_video?diff=split)
+- [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step2-1_robot_img_video)
+- [difference with the previous step](https://github.com/loiclegoff/irc-react-2026-correction/compare/step1-first_app_with_bootstrap_components...step2-1_robot_img_video?diff=split)
 
 # Step 3 : list robots
 
@@ -292,8 +292,8 @@ Update one component to show all robots
 
 ## Correction proposal
 
-- [branch](https://github.com/loiclegoff/irc-react-2024-correction/tree/step3-list_of_robots_img_video)
-- [difference with the previous step](https://github.com/loiclegoff/irc-react-2024-correction/compare/step2-1_robot_img_video...step3-list_of_robots_img_video?diff=split)
+- [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step3-list_of_robots_img_video)
+- [difference with the previous step](https://github.com/loiclegoff/irc-react-2026-correction/compare/step2-1_robot_img_video...step3-list_of_robots_img_video?diff=split)
 
 # Step 4 : list robots and associated parts
 
@@ -347,13 +347,13 @@ You can re-use Price and Visual components
 
 ## Correction proposal
 
-- [branch](https://github.com/loiclegoff/irc-react-2024-correction/tree/step4-list_of_robots_with_related_parts)
-- [difference with the previous step](https://github.com/loiclegoff/irc-react-2024-correction/compare/step3-list_of_robots_img_video...step4-list_of_robots_with_related_parts?diff=split)
+- [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step4-list_of_robots_with_related_parts)
+- [difference with the previous step](https://github.com/loiclegoff/irc-react-2026-correction/compare/step3-list_of_robots_img_video...step4-list_of_robots_with_related_parts?diff=split)
 
 ### With others features
 
-- [branch](https://github.com/loiclegoff/irc-react-2024-correction/tree/step4bis-list_of_robots_with_related_parts_and_right_panel)
-- [difference](https://github.com/loiclegoff/irc-react-2024-correction/compare/step4-list_of_robots_with_related_parts...step4bis-list_of_robots_with_related_parts_and_right_panel?diff=split)
+- [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step4bis-list_of_robots_with_related_parts_and_right_panel)
+- [difference](https://github.com/loiclegoff/irc-react-2026-correction/compare/step4-list_of_robots_with_related_parts...step4bis-list_of_robots_with_related_parts_and_right_panel?diff=split)
 
 # Step 5 : list robots and associated parts with redux
 
@@ -471,8 +471,8 @@ const Component = () => {
 
 ## Correction proposal
 
-- [branch](https://github.com/loiclegoff/irc-react-2024-correction/tree/step5-list_of_robots_with_related_parts_redux)
-- [difference with the previous step](https://github.com/loiclegoff/irc-react-2024-correction/compare/step4bis-list_of_robots_with_related_parts_and_right_panel...step5-list_of_robots_with_related_parts_redux?diff=split)
+- [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step5-list_of_robots_with_related_parts_redux)
+- [difference with the previous step](https://github.com/loiclegoff/irc-react-2026-correction/compare/step4bis-list_of_robots_with_related_parts_and_right_panel...step5-list_of_robots_with_related_parts_redux?diff=split)
 
 # Step : Advanced Practice
 
