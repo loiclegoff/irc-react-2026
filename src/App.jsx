@@ -1,55 +1,35 @@
-import { useEffect } from "react";
-import "./App.css";
-import { RobotsList } from "./components/robot/robots-list";
-import { Col, Container, Row } from "react-bootstrap";
-import { PartsList } from "./components/part/parts-list";
-import { useDispatch } from "react-redux";
-import { loadRobots } from "./core/actions/robot.js";
-import { loadParts } from "./core/actions/part.js";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(
-        "https://robot-cpe.cleverapps.io/robots"
-      );
-      const data = await response.json();
-      // même chose dispatch({ type: "LOAD_PARTS", payload: data });
-      dispatch(loadRobots(data));
-    }
-    // Get data from an API.
-    fetchData();
-  }, [dispatch]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(
-        "https://robot-cpe.cleverapps.io/parts"
-      );
-      const data = await response.json();
-      dispatch(loadParts(data));
-    }
-    // Get data from an API.
-    fetchData();
-  }, [dispatch]);
+  const [count, setCount] = useState(0)
 
   return (
-    <div className="app">
-      <h1>Robot Shop</h1>
-      <Container>
-        <Row>
-          <Col>
-            <RobotsList />
-          </Col>
-          <Col>
-            <PartsList />
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  );
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank" rel="noreferrer">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default App;
+export default App
