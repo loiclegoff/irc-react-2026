@@ -143,7 +143,7 @@ Now if you view your `index.html` in the browser, you'll see the `h1` tag we cre
 
 ### Create your app folder
 
-- Use the github template : https://github.com/loiclegoff/irc-react-2026 with your githuh account
+- Use the github template : https://github.com/loiclegoff/irc-react-2026 with your github account
 - Checkout locally your repo : `git clone xxx`
 
 ```shell
