@@ -51,7 +51,7 @@ Let's start by making a basic `index.html` file. React 19 is no longer published
 
 I'm loading in the latest stable versions of the libraries as of the time of this writing.
 
-- [React](https://react.dev/reference/react) - the offical React documentation
+- [React](https://react.dev/reference/react) - the official React documentation
 - [Babel](https://babeljs.io/) - a JavaScript compiler that lets us use ES6+ in old browsers
 
 The entry point for our app will be the `root` div element, which is named by convention. You'll also notice the `text/babel` script type, which is mandatory for using Babel.
@@ -143,8 +143,8 @@ Now if you view your `index.html` in the browser, you'll see the `h1` tag we cre
 
 ### Create your app folder
 
-- Use the github template : https://github.com/loiclegoff/irc-react-2026 with your github account
-- Checkout locally your repo : `git clone xxx`
+- Use the GitHub template: https://github.com/loiclegoff/irc-react-2026 with your GitHub account
+- Check out your repo locally: `git clone xxx`
 
 ```shell
 npm install
@@ -159,25 +159,25 @@ Open `index.html` and add bootstrap import to use css rules
 <head>
   <!-- ... -->
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
     crossorigin="anonymous"
   />
 </head>
 ```
 
-## Exemple
+## Example
 
 ```jsx
-import React, { useState } from "react";
+import { useState } from "react";
 
 function App(props) {
   // state is initialized by a props
   const [title, setTitle] = useState(props.title);
 
   const handleChangeTitle = (e) => {
-    // this.setState allows us to update the state value
+    // setTitle updates the state and triggers a re-render
     setTitle(e.target.value);
   };
 
@@ -200,23 +200,23 @@ export default App;
 
 ## Practice
 
-Modify `index.js` and `App.js` to:
+Modify `src/main.jsx` and `src/App.jsx` to:
 
-- Create App allowing to get as input a title and print it below
+- Create an `App` component that takes a title as input and prints it below
   <details>
       <summary>help</summary>
       <p>
           use a state to store the value of the input
       </p>
   </details>
-- Your App component must be initialized with the title property = ‘default_title’
+- Your `App` component must be initialized with the `title` property set to `default_title`
     <details>
         <summary>help</summary>
         <p>
             props to initialize this property
         </p>
     </details>
-- Update the number of mouse over the printed title
+- Display how many times the mouse has hovered over the printed title
     <details>
         <summary>help</summary>
         <p>
@@ -242,7 +242,7 @@ Replace your elements that use bootstrap classnames with the correct component i
 import { Button } from "react-bootstrap";
 ```
 
-Others components : https://getbootstrap.com/docs/5.3/components/alerts/
+Other components: https://getbootstrap.com/docs/5.3/components/alerts/
 
 ## Correction proposal
 
@@ -253,7 +253,7 @@ Others components : https://getbootstrap.com/docs/5.3/components/alerts/
 
 ## Fetch data
 
-A REST api is availaible at the following URL : https://robot-cpe.cleverapps.io
+A REST API is available at the following URL: https://robot-cpe.cleverapps.io
 
 For this step you can use these endpoints:
 
@@ -275,9 +275,9 @@ To do :
 - A main component that fetches data from robots
     <details>
     <summary>help</summary>
-    You can use the default **fetch** API to get data. This resquest can be triggered by the *useEffect* hook (without deps)
+    You can use the default **fetch** API to get data. This request can be triggered by the *useEffect* hook with an empty deps array `[]`
     </details>
-- A Left side component: `RobotList`
+- A left-side component: `RobotList`
 - A `Robot` component
 - A `Label` component for the Robot Component
 
@@ -316,25 +316,25 @@ GET    /parts?id=A1&id=A2
 
 ## Application
 
-- Add a MiddleSide Component displaying the parts list: `PartList`
+- Add a middle-side component displaying the parts list: `PartList`
     <details>
     <summary>help</summary>
-    See the implementation of RobotList commponent
+    See the implementation of the `RobotList` component
     </details>
 - Add a `Part` Component using
   - `Description` Component
   - `Price` Component
   <details>
   <summary>help</summary>
-  See the implementation of Robot component
+  See the implementation of the `Robot` component
   </details>
 - Update the `PartList` Component to show only the part related to the selected robot
     <details>
     <summary>help</summary>
-    Add a new attibute in the main state : selectedId. Inject in RobotList component a setter and add the property selectedPartIds in PartList
+    Add a new attribute to the main state: `selectedId`. Inject in RobotList component a setter and add the property selectedPartIds in PartList
     </details>
 
-## Others features (for futher)
+## Other features (optional)
 
 _This part is not required_
 
@@ -350,7 +350,7 @@ You can re-use Price and Visual components
 - [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step4-list_of_robots_with_related_parts)
 - [difference with the previous step](https://github.com/loiclegoff/irc-react-2026-correction/compare/step3-list_of_robots_img_video...step4-list_of_robots_with_related_parts?diff=split)
 
-### With others features
+### With other features
 
 - [branch](https://github.com/loiclegoff/irc-react-2026-correction/tree/step4bis-list_of_robots_with_related_parts_and_right_panel)
 - [difference](https://github.com/loiclegoff/irc-react-2026-correction/compare/step4-list_of_robots_with_related_parts...step4bis-list_of_robots_with_related_parts_and_right_panel?diff=split)
@@ -434,9 +434,14 @@ import globalReducer from "./reducers";
 const store = createStore(globalReducer, composeWithDevTools());
 ```
 
+> Your editor will show `createStore` struck through: it is deprecated in favour of
+> `configureStore` from Redux Toolkit. It still works, and the Redux docs themselves say the
+> core package is fine *"for learning purposes"* - which is exactly what we are doing here.
+> In a real project you would use [Redux Toolkit](https://redux-toolkit.js.org/).
+
 ## Add dispatchers and selector to be connected with the store
 
-Exemple
+Example
 
 MyComponent.jsx
 
@@ -461,13 +466,13 @@ const Component = () => {
 
 ## Practice
 
-- Subscribe to store and get the list of robots in the **RobotList** component
-- Dispatch the robots fetching in the **RobotList** component
-- Dispatch selected robot in the **Robot** component
-- Subscribe to store and get the list of parts in the **Partlist** component
-- Dispatch the parts fetching in the **PartList** component
-- Dispatch selected part in the **Part** component
-- Subscribe to store and get the selected part in the **PartDetail** component
+- Subscribe to the store and get the list of robots in the **RobotList** component
+- Fetch the robots and dispatch the result in the **RobotList** component
+- Dispatch the selected robot in the **Robot** component
+- Subscribe to the store and get the list of parts in the **PartList** component
+- Fetch the parts and dispatch the result in the **PartList** component
+- Dispatch the selected part in the **Part** component
+- Subscribe to the store and get the selected part in the **PartDetail** component
 
 ## Correction proposal
 
